@@ -1,4 +1,5 @@
 use itertools::Itertools;
+use rpkg_rs::misc::hash_path_list::PathList;
 use rpkg_rs::misc::ini_file_system::IniFileSystem;
 use rpkg_rs::misc::resource_id::ResourceID;
 use rpkg_rs::resource::partition_manager::{PartitionManager, PartitionState};
@@ -6,18 +7,17 @@ use rpkg_rs::resource::pdefs::PackageDefinitionSource;
 use rpkg_rs::resource::resource_info::ResourceInfo;
 use rpkg_rs::resource::resource_partition::PatchId;
 use rpkg_rs::resource::runtime_resource_id::RuntimeResourceID;
-use std::collections::VecDeque;
+use std::collections::{HashSet, VecDeque};
 use std::io::Write;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::str::FromStr;
 use std::{env, io};
 
 // Based on mount_game_files example from rpkg-rs
 pub fn main() {
     let args: Vec<String> = env::args().collect();
-
-    if args.len() < 4 {
-        eprintln!("Usage: cargo run <path to a retail directory> <game version (H2016 | HM2 | HM3)> <ioi string or hash>");
+    if args.len() < 5 {
+        eprintln!("Usage: cargo run <path to a Retail directory> <game version (H2016 | HM2 | HM3)> <ioi string or hash> <path to a hashlist>");
         return;
     }
 
@@ -31,6 +31,12 @@ pub fn main() {
 
     let app_options = &thumbs.root()["application"];
 
+    let hash_list_path = Path::new(&args[4]);
+
+    let mut path_list = PathList::new();
+    path_list.parse_into(hash_list_path).unwrap();
+        
+    
     if let (Some(proj_path), Some(relative_runtime_path)) = (
         app_options.options().get("PROJECT_PATH"),
         app_options.options().get("RUNTIME_PATH"),
@@ -99,7 +105,7 @@ pub fn main() {
             });
 
         let ioi_string_or_hash = args[3].as_str();
-        let hash;
+        let mut hash;
         let hash_resource_id = RuntimeResourceID::from_hex_string(ioi_string_or_hash);
         if hash_resource_id.is_err() {
             let ioi_string_resource_id = ResourceID::from_str(ioi_string_or_hash);
@@ -113,37 +119,60 @@ pub fn main() {
             hash = ioi_string_or_hash.to_string();
         }
         let mut hashes: VecDeque<String> = VecDeque::from([String::from_str(&hash).unwrap()]);
+        let mut found_hashes = HashSet::new();
         println!("Getting ALOCs for: {}", hash);
         loop {
             if hashes.len() == 0 {
                 break;
             }
-            let hash = &hashes.pop_front().unwrap();
-            let rrid = RuntimeResourceID::from_hex_string(hash).unwrap_or_else(|_| {
+            hash = hashes.pop_front().unwrap();
+            let rrid = RuntimeResourceID::from_hex_string(&hash).unwrap_or_else(|_| {
                 println!("Invalid RuntimeResourceId");
                 std::process::exit(0);
             });
+            if found_hashes.contains(&rrid) {
+                continue;
+            }
+            found_hashes.insert(rrid);
             let resource_package_opt = get_resource_info(&package_manager, &rrid);
             if resource_package_opt.is_none() {
                 continue;
             }
+            let ioi_string = if path_list.get(&rrid).is_some() {
+                path_list.get(&rrid).unwrap().resource_path()
+            } else {
+                "".to_string()
+            };
+    
             let resource_package = resource_package_opt.unwrap();
             let references = resource_package.0.references();
-            let mut shown_resource_info = false;
+            // println!("{} {} Type: {} Partition: {}", rrid, ioi_string, resource_package.0.data_type(), resource_package.1);
+
             for reference in references.iter() {
                 let dep_rrid = reference.0;
+                
+                if found_hashes.contains(&dep_rrid) {
+                    continue;
+                }
                 let depend_resource_opt = get_resource_info(&package_manager, &dep_rrid);
                 if depend_resource_opt.is_none() {
                     continue;
                 }
+                let dep_ioi_string = if path_list.get(&dep_rrid).is_some() {
+                    path_list.get(&dep_rrid).unwrap().resource_path()
+                } else {
+                    "".to_string()
+                };
+
                 let depend_resource = depend_resource_opt.unwrap();
                 if Vec::from(["TEMP", "ALOC", "PRIM"]).contains(&depend_resource.0.data_type().as_str()) {
                     let is_aloc = depend_resource.0.data_type().as_str() == "ALOC";
-                    if !shown_resource_info && is_aloc {
-                        shown_resource_info = true;
-                    }
+                    // println!("|->  {} {} Type: {} Partition: {}", dep_rrid, dep_ioi_string, depend_resource.0.data_type(), depend_resource.1);
+
                     if is_aloc {
-                        println!("{} Type: {} Partition: {}", dep_rrid, depend_resource.0.data_type(), depend_resource.1);
+                        println!("{} {} Type: {} Partition: {}", rrid, ioi_string, resource_package.0.data_type(), resource_package.1);
+
+                        println!("|-> {} {} Type: {} Partition: {}", dep_rrid, dep_ioi_string, depend_resource.0.data_type(), depend_resource.1);
                     }
                     hashes.push_back(dep_rrid.to_hex_string());
                 }
