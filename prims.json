@@ -1,0 +1,2733 @@
+[
+  {
+    "entity": {
+      "id": "feedf9bad6815e0f",
+      "name": "skyscraper_staff_ceiling_floor_zmapped_a ceiling",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -8.0, "y": -6.0, "z": 6.0 },
+        "rotation": {
+          "yaw": -0.0,
+          "pitch": 3.1415927410125732,
+          "roll": 3.1415927410125732
+        },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": -8.0, "y": -6.0, "z": 6.0 },
+        "rotation": {
+          "yaw": -0.0,
+          "pitch": 3.1415927410125732,
+          "roll": 3.1415927410125732
+        },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": 0.0, "y": -1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": 0.0, "z": -1.0 },
+            "Trans": { "x": -8.0, "y": -6.0, "z": 6.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedb2923f5fa7af",
+            "name": "Ceilings",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 8.0, "y": 6.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~0da90f87": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed8b3fea8ad339",
+      "name": "skyscraper_staff_ceiling_floor_zmapped_a floor",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -8.0, "y": 6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": -8.0, "y": 6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": -8.0, "y": 6.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed3c572ef05679",
+            "name": "Floors",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 8.0, "y": 6.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~0da90f87": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feede50ae0479660",
+      "name": "Leather_Chair_Italian_A_02",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": -3.799999952316284, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": -3.799999952316284, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_STATIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": -1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": 0.0, "y": -1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": 0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": -3.799999952316284, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedee0e055b426f",
+            "name": "Props",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed72869cedfb34",
+      "name": "skyscraper_staff_ceiling_floor_zmapped_a ceiling",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -4.0, "y": -22.0, "z": 6.0 },
+        "rotation": {
+          "yaw": -0.0,
+          "pitch": 3.1415927410125732,
+          "roll": 3.1415927410125732
+        },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": -4.0, "y": -8.0, "z": 6.0 },
+        "rotation": {
+          "yaw": -0.0,
+          "pitch": 3.1415927410125732,
+          "roll": 3.1415927410125732
+        },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": 0.0, "y": -1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": 0.0, "z": -1.0 },
+            "Trans": { "x": -4.0, "y": -8.0, "z": 6.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed78e0167ff76d",
+            "name": "Ceilings",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 4.0, "y": 8.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~0da90f87": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed898521607581",
+      "name": "skyscraper_staff_ceiling_floor_zmapped_a floor",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -4.0, "y": -6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": -4.0, "y": 8.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": -4.0, "y": 8.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedc74da26ae631",
+            "name": "Floors",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 4.0, "y": 8.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~0da90f87": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedaaec19107fb6",
+      "name": "Leather_Chair_Italian_A_02",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": -20.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": -6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_STATIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": -1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": 0.0, "y": -1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": 0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": -6.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed3a2397b6cc55",
+            "name": "Props",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "b6e4da13094359e7",
+      "source": "editor",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZDynamicPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IDynamicPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZBlurBufferEntity",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.994331955909729 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.9943320155143738 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.9943320155143738 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": false },
+        "m_bIsPrivate": { "type": "bool", "data": true },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "dbb7aae1b2846e45",
+            "source": "editor",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 2.5, "y": 2.5, "z": 3.5 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": true },
+        "m_bKinematic": { "type": "bool", "data": false },
+        "m_bStartSleeping": { "type": "bool", "data": false },
+        "m_bIgnoreCharacters": { "type": "bool", "data": false },
+        "m_bEnableCollision": { "type": "bool", "data": true },
+        "m_bAllowKinematicKinematicContactNotification": {
+          "type": "bool",
+          "data": false
+        },
+        "m_fMass": { "type": "float32", "data": 1.0 },
+        "m_fFriction": { "type": "float32", "data": 1.0 },
+        "m_fRestitution": { "type": "float32", "data": 0.05000000074505806 },
+        "m_fLinearDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fAngularDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fSleepEnergyThreshold": {
+          "type": "float32",
+          "data": 0.05000000074505806
+        },
+        "m_ePriority": { "type": "ECollisionPriority", "data": null },
+        "m_eCCD": { "type": "ECCDUsage", "data": null },
+        "m_eCenterOfMass": { "type": "ECOMUsage", "data": null },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "m_bBlurBufferEarly": { "type": "bool", "data": false },
+        "m_bBlurBufferPassive": { "type": "bool", "data": true },
+        "Frequency": { "type": "float32", "data": 3.0 },
+        "StartSize": { "type": "float32", "data": 0.5 },
+        "RefractionNear": { "type": "float32", "data": 5000.0 },
+        "RefractionFar": { "type": "float32", "data": 2000.0 },
+        "m_eCurveType": {
+          "type": "ZWaveformGeneratorEntity.ECurveType",
+          "data": null
+        }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "37ff75963ee47ed6",
+      "source": "editor",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZDynamicPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IDynamicPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZBlurBufferEntity",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.994331955909729 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.9943320155143738 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.9943320155143738 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": false },
+        "m_bIsPrivate": { "type": "bool", "data": true },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "dbb7aae1b2846e45",
+            "source": "editor",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 2.5, "y": 2.5, "z": 3.5 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": true },
+        "m_bKinematic": { "type": "bool", "data": false },
+        "m_bStartSleeping": { "type": "bool", "data": false },
+        "m_bIgnoreCharacters": { "type": "bool", "data": false },
+        "m_bEnableCollision": { "type": "bool", "data": true },
+        "m_bAllowKinematicKinematicContactNotification": {
+          "type": "bool",
+          "data": false
+        },
+        "m_fMass": { "type": "float32", "data": 1.0 },
+        "m_fFriction": { "type": "float32", "data": 1.0 },
+        "m_fRestitution": { "type": "float32", "data": 0.05000000074505806 },
+        "m_fLinearDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fAngularDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fSleepEnergyThreshold": {
+          "type": "float32",
+          "data": 0.05000000074505806
+        },
+        "m_ePriority": { "type": "ECollisionPriority", "data": null },
+        "m_eCCD": { "type": "ECCDUsage", "data": null },
+        "m_eCenterOfMass": { "type": "ECOMUsage", "data": null },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "m_bBlurBufferEarly": { "type": "bool", "data": false },
+        "m_bBlurBufferPassive": { "type": "bool", "data": true },
+        "Frequency": { "type": "float32", "data": 3.0 },
+        "StartSize": { "type": "float32", "data": 0.5 },
+        "RefractionNear": { "type": "float32", "data": 5000.0 },
+        "RefractionFar": { "type": "float32", "data": 2000.0 },
+        "m_eCurveType": {
+          "type": "ZWaveformGeneratorEntity.ECurveType",
+          "data": null
+        }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "866049a26c82c36d",
+      "source": "editor",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZDynamicPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IDynamicPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": {
+          "x": -2.300000051036477e-5,
+          "y": -1.1000000085914508e-5,
+          "z": 0.2714809477329254
+        },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": {
+          "x": -2.300000051036477e-5,
+          "y": -1.1000000085914508e-5,
+          "z": 0.2714810073375702
+        },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": -1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": 0.0, "y": -1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": 0.0, "z": 1.0 },
+            "Trans": {
+              "x": -2.300000051036477e-5,
+              "y": -1.1000000085914508e-5,
+              "z": 0.2714810073375702
+            }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": false },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": false },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "dbb7aae1b2846e45",
+            "source": "editor",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.649999976158142, "y": 1.649999976158142, "z": 4.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": true },
+        "m_bKinematic": { "type": "bool", "data": true },
+        "m_bStartSleeping": { "type": "bool", "data": false },
+        "m_bIgnoreCharacters": { "type": "bool", "data": false },
+        "m_bEnableCollision": { "type": "bool", "data": false },
+        "m_bAllowKinematicKinematicContactNotification": {
+          "type": "bool",
+          "data": false
+        },
+        "m_fMass": { "type": "float32", "data": 1.0 },
+        "m_fFriction": { "type": "float32", "data": 1.0 },
+        "m_fRestitution": { "type": "float32", "data": 0.05000000074505806 },
+        "m_fLinearDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fAngularDampening": {
+          "type": "float32",
+          "data": 0.30000001192092896
+        },
+        "m_fSleepEnergyThreshold": {
+          "type": "float32",
+          "data": 0.05000000074505806
+        },
+        "m_ePriority": { "type": "ECollisionPriority", "data": null },
+        "m_eCCD": { "type": "ECCDUsage", "data": null },
+        "m_eCenterOfMass": { "type": "ECOMUsage", "data": null },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed6571e4cce08a",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -8.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedb163f86d3429",
+            "name": "East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 3.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed603e13ae22bd",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -8.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedb163f86d3429",
+            "name": "East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 3.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed3ae0ae629753",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -6.0, "y": -6.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed224cff428df0",
+            "name": "North East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed79ebf8e98099",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -6.0, "y": -6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed224cff428df0",
+            "name": "North East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed9e8c538d2466",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 6.0, "y": -6.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed9f8831386662",
+            "name": "North West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed77abb57551b2",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 6.0, "y": -6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed9f8831386662",
+            "name": "North West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedade230a884ca",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": 6.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed44e983148608",
+            "name": "South Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed42168b9b3a6e",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 0.0, "y": 6.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed44e983148608",
+            "name": "South Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedcc1bbb417e21",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 8.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed65cb5d0b7d3e",
+            "name": "West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 3.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed0b728c0df2d5",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 8.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed65cb5d0b7d3e",
+            "name": "West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 3.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feeda9e487f1e4e2",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -4.0, "y": -14.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed0a4123266d1c",
+            "name": "East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed698b3d3fa91e",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -4.0, "y": -14.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed0a4123266d1c",
+            "name": "East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed9a077d2fee67",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -2.0, "y": -22.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedc52c77239cdc",
+            "name": "North East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feed94dc8629a8e5",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": -2.0, "y": -22.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedc52c77239cdc",
+            "name": "North East Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feede2459fd23527",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 2.0, "y": -22.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed503a2de9e50b",
+            "name": "North West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedda9177a2ae5e",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 2.0, "y": -22.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 1.570796251296997 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 0.9999999403953552, "y": 0.9999999403953552, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feed503a2de9e50b",
+            "name": "North West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 1.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedbdc6670fd7b2",
+      "name": "Skyscraper_Window_6x4_Glass",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "ZMaterialOverwriteAspect",
+        "ZExplosionBlockerAspect",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 4.0, "y": -14.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 3.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 3.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedda16cbee2cdc",
+            "name": "West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": false },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null },
+        "~9981df89": { "type": "ZResourcePtr", "data": {} },
+        "m_bEnableExplosionBlocker": { "type": "bool", "data": true }
+      }
+    }
+  },
+  {
+    "entity": {
+      "id": "feedd257d92e914a",
+      "name": "skyscraper_window_6x4_c_inside",
+      "source": "game",
+      "tblu": "003FC5B5BE3EA0CE",
+      "type": "ZGeomEntity",
+      "interfaces": [
+        "ZGeomEntity",
+        "ZPrimitiveContainerEntity",
+        "ZRenderableEntity",
+        "ZBoundedEntity",
+        "ZSpatialEntity",
+        "ZStaticPhysicsAspect",
+        "ZPhysicsBaseEntity",
+        "ICollisionShapeListener",
+        "IStaticPhysics",
+        "IPhysicsAccessor",
+        "ZCollisionResourceShapeAspect",
+        "ICollisionShapeProvider",
+        "IEntity",
+        "void"
+      ],
+      "transform": {
+        "position": { "x": 4.0, "y": -14.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": 3.1415927410125732 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "relativeTransform": {
+        "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+        "rotation": { "yaw": -0.0, "pitch": 0.0, "roll": -0.0 },
+        "scale": { "x": 1.0, "y": 1.0, "z": 1.0 }
+      },
+      "properties": {
+        "m_eRoomBehaviour": {
+          "type": "ZSpatialEntity.ERoomBehaviour",
+          "data": "ROOM_DYNAMIC"
+        },
+        "m_bForceVisible": { "type": "bool", "data": false },
+        "m_mTransform": {
+          "type": "SMatrix43",
+          "data": {
+            "XAxis": { "x": 1.0, "y": 0.0, "z": 0.0 },
+            "YAxis": { "x": -0.0, "y": 1.0, "z": 0.0 },
+            "ZAxis": { "x": 0.0, "y": -0.0, "z": 1.0 },
+            "Trans": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        "m_bVisible": { "type": "bool", "data": true },
+        "m_bIsPrivate": { "type": "bool", "data": false },
+        "m_bVisibleInBoxReflection": { "type": "bool", "data": true },
+        "m_nViewportVisibility": { "type": "uint8", "data": 255 },
+        "m_eidParent": {
+          "type": "TEntityRef<ZSpatialEntity>",
+          "data": {
+            "id": "feedda16cbee2cdc",
+            "name": "West Window with Frame",
+            "source": "game",
+            "tblu": "003FC5B5BE3EA0CE",
+            "type": "ZCompositeEntity"
+          }
+        },
+        "m_fLODScale": { "type": "float32", "data": 1.0 },
+        "m_fLODOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationOffset": { "type": "float32", "data": 0.0 },
+        "m_fTessellationMaxDist": { "type": "float32", "data": 5.0 },
+        "m_eGlowType": { "type": "ERenderGlowTypes", "data": null },
+        "m_eTessellationMode": { "type": "ETessellationMode", "data": null },
+        "m_eTessellationFactorMode": {
+          "type": "ETessellationFactorMode",
+          "data": null
+        },
+        "m_nTessellationMaxTessellation": { "type": "uint8", "data": 8 },
+        "m_bCastShadows": { "type": "bool", "data": true },
+        "m_bDisableStaticShadows": { "type": "bool", "data": false },
+        "m_bPCCastShadows": { "type": "bool", "data": false },
+        "m_nEmissiveHdrScale": { "type": "uint8", "data": 0 },
+        "m_bRaytracingVisible": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleShadows": { "type": "bool", "data": true },
+        "m_bRaytracingVisibleReflections": { "type": "bool", "data": true },
+        "m_VertexPaintData": { "type": "TResourcePtr", "data": null },
+        "m_sVertexPaintSourceResourceId": { "type": "ZString", "data": "" },
+        "m_ResourceID": { "type": "ZResourcePtr", "data": {} },
+        "m_PrimitiveScale": {
+          "type": "SVector3",
+          "data": { "x": 1.0, "y": 4.0, "z": 1.0 }
+        },
+        "m_eSeamFix": { "type": "ESeamFixMode", "data": null },
+        "m_bRemovePhysics": { "type": "bool", "data": false },
+        "m_bDisableNavmeshExport": { "type": "bool", "data": false },
+        "m_bSmartStairSurface": { "type": "bool", "data": false },
+        "m_CollisionResourceID": { "type": "TResourcePtr", "data": null }
+      }
+    }
+  }
+]
