@@ -20,7 +20,7 @@ pub struct ScenarioScan {
     hash_list_file: String,
     hashes_for_output: HashSet<RuntimeResourceID>,
     alocs_for_output: HashSet<RuntimeResourceID>,
-    tblus_for_output: HashSet<RuntimeResourceID>,
+    prims_for_output: HashSet<RuntimeResourceID>,
     
 }
 
@@ -33,7 +33,7 @@ impl ScenarioScan {
             hash_list_file,
             hashes_for_output: HashSet::new(),
             alocs_for_output: HashSet::new(),
-            tblus_for_output: HashSet::new(),
+            prims_for_output: HashSet::new(),
         }
     }
 
@@ -162,9 +162,9 @@ impl ScenarioScan {
         
                 let resource_package = resource_package_opt.unwrap();
                 let references = resource_package.0.references();
-                let mut tblu_rrid: Option<RuntimeResourceID> = None;
-                let mut tblu_ioi_string: Option<String> = None;
-                let mut tblu_partition: Option<String> = None;
+                let mut prim_rrid: Option<RuntimeResourceID> = None;
+                let mut prim_ioi_string: Option<String> = None;
+                let mut prim_partition: Option<String> = None;
                 let mut has_aloc = false;
                 for reference in references.iter() {
                     let dep_rrid = reference.0;
@@ -184,10 +184,10 @@ impl ScenarioScan {
 
                     let depend_resource = depend_resource_opt.unwrap();
                     
-                    if depend_resource.0.data_type().as_str() == "TBLU" {
-                        tblu_rrid = Some(dep_rrid);
-                        tblu_ioi_string = Some(dep_ioi_string.clone());
-                        tblu_partition = Some(depend_resource.1.clone());
+                    if depend_resource.0.data_type().as_str() == "PRIM" {
+                        prim_rrid = Some(dep_rrid);
+                        prim_ioi_string = Some(dep_ioi_string.clone());
+                        prim_partition = Some(depend_resource.1.clone());
                     }
                     if Vec::from(["TEMP", "ALOC", "PRIM"]).contains(&depend_resource.0.data_type().as_str()) {
                         let is_aloc = depend_resource.0.data_type().as_str() == "ALOC";
@@ -201,9 +201,9 @@ impl ScenarioScan {
                         hashes.push_back(dep_rrid.to_hex_string());
                     }
                 }
-                if has_aloc && tblu_rrid.is_some() {
-                    self.tblus_for_output.insert(tblu_rrid.unwrap());
-                    println!("|-> {} {} Type: TBLU Partition: {}", tblu_rrid.unwrap(), tblu_ioi_string.unwrap(), tblu_partition.unwrap());
+                if has_aloc && prim_rrid.is_some() {
+                    self.prims_for_output.insert(prim_rrid.unwrap());
+                    println!("|-> {} {} Type: prim Partition: {}", prim_rrid.unwrap(), prim_ioi_string.unwrap(), prim_partition.unwrap());
 
                 }
             }
@@ -221,8 +221,8 @@ impl ScenarioScan {
 
     pub fn output_to_file(&self, output_file: String) {
         let output_path = Path::new(&output_file);
-        let mut data = String::from(r#"{"type":"listTbluEntities", "tblus":["#);
-        let mut it = self.tblus_for_output.iter().peekable();
+        let mut data = String::from(r#"{"type":"listPrimEntities", "prims":["#);
+        let mut it = self.prims_for_output.iter().peekable();
         while let Some(rrid) = it.next() {
             data += (String::from("\"") + rrid.to_hex_string().as_str() + "\"").as_str();
             if it.peek().is_some() {
