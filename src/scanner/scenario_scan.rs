@@ -137,11 +137,16 @@ impl ScenarioScan {
             let mut hashes: VecDeque<String> = VecDeque::from([String::from_str(&hash).unwrap()]);
             let mut found_hashes = HashSet::new();
             println!("Getting ALOCs for: {}", hash);
+            
+            let excluded_hashes: Vec<&str> = Vec::from(["00BDA629523CE8B2", "00ACD408BE462DD3","00355E794876922A"]);
             loop {
                 if hashes.len() == 0 {
                     break;
                 }
                 hash = hashes.pop_front().unwrap();
+                if excluded_hashes.contains(&hash.as_str()) {
+                    continue
+                }
                 let rrid = RuntimeResourceID::from_hex_string(&hash).unwrap_or_else(|_| {
                     println!("Invalid RuntimeResourceId");
                     std::process::exit(0);
@@ -189,7 +194,7 @@ impl ScenarioScan {
                         prim_ioi_string = Some(dep_ioi_string.clone());
                         prim_partition = Some(depend_resource.1.clone());
                     }
-                    if Vec::from(["TEMP", "ALOC", "PRIM"]).contains(&depend_resource.0.data_type().as_str()) {
+                    if Vec::from(["TEMP", "ALOC", "PRIM", "ASET"]).contains(&depend_resource.0.data_type().as_str()) {
                         let is_aloc = depend_resource.0.data_type().as_str() == "ALOC";
                         if is_aloc {
                             println!("{} {} Type: {} Partition: {}", rrid, ioi_string, resource_package.0.data_type(), resource_package.1);

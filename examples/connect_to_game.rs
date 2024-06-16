@@ -24,20 +24,40 @@ pub fn main() {
     
     fs::write(args[2].as_str(), "").expect(format!("Error writing to {}", args[2].as_str()).as_str());
     
-    // let mut entities = "[".to_string();
     let mut out_file = OpenOptions::new()
         .write(true)
         .append(true)
         .open(args[2].as_str())
         .unwrap();
 
+    let mut welcome_received: bool = false;
+    let mut is_first: bool = true;
+
     loop {
         let msg = socket.read_message().expect("Error reading message");
-        println!("Received: {}", msg);
-        // entities += msg.to_string().as_str();
-        if let Err(e) = writeln!(out_file, "{}", msg) {
-            eprintln!("Couldn't write to file: {}", e);
+        if msg.to_string().as_str() == "Done sending entities." {
+            println!("Received Done message. Finalizing json output and exiting.");
+            if let Err(e) = writeln!(out_file, "]}}") {
+                eprintln!("Couldn't write to file: {}", e);
+            }
+            break
+        }
+        if welcome_received {
+            if !is_first {
+                if let Err(e) = writeln!(out_file, ",") {
+                    eprintln!("Couldn't write to file: {}", e);
+                }
+            } else {
+                is_first = false;
+            }
+            if let Err(e) = write!(out_file, "{}", msg) {
+                eprintln!("Couldn't write to file: {}", e);
+            }
+        } else {
+            if let Err(e) = write!(out_file, r#"{{"entities":["#) {
+                eprintln!("Couldn't write to file: {}", e);
+            }
+            welcome_received = true;
         }
     }
-    // entities += "]";
 }
