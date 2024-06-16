@@ -4,7 +4,7 @@
 
 ![Maintenance](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg)
 
-`glacier2obj` provides functionality to search for collision (PRIM) files with a Glacier scene from the Hitman games. Eventually it will also convert them into an OBJ file.
+`glacier2obj` provides functionality to search for mesh (PRIM) files with a Glacier scene from the Hitman games. Eventually it will also convert them into an OBJ file.
 
 ## Features
 
