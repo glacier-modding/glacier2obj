@@ -5,10 +5,10 @@ import mathutils
 from mathutils import Euler
 import math
 
-path_to_obj_dir = os.path.join('D:\\workspace\\glacier2obj\\objects\\OBJ\\')
+path_to_obj_dir = os.path.join('D:\\workspace\\glacier2obj\\output\\obj\\')
 file_list = sorted(os.listdir(path_to_obj_dir))
 obj_list = [item for item in file_list if item.endswith('.obj')]
-path_to_prims_json = os.path.join('D:\\workspace\\glacier2obj\\prims.json');
+path_to_prims_json = os.path.join('D:\\workspace\\glacier2obj\\output\\prims.json');
 f = open (path_to_prims_json, "r")
 data = json.loads(f.read())
 print("Printing hashes and transforms")
