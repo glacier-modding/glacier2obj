@@ -24,7 +24,7 @@ impl PrimsJson {
             println!("Entity Instance:");
             println!(" Hash:     {}", entity.prim_hash);
             println!(" ID:       {}", entity.entity.id);
-            println!(" Name:     {}", entity.entity.name);
+            println!(" Name:     {}", entity.entity.name.clone().unwrap_or(String::from("")));
             println!(" Position: {:?}", entity.entity.position);
             println!(" Rotation: {:?}", entity.entity.rotation);
             println!(" Scale:    {:?}", entity.entity.scale);
@@ -43,7 +43,7 @@ pub struct EntityHashPair {
 #[serde(rename_all = "camelCase")]
 pub struct Entity {
     pub id: String,
-    pub name: String,
+    pub name: Option<String>,
     pub position: Vec3,
     pub rotation: Rotation,
     pub scale: Scale,
