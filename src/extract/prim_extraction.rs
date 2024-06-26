@@ -11,7 +11,10 @@ impl PrimExtraction {
         let runtime_folder_path = PathBuf::from(&runtime_folder);
         let prims_output_folder_path = PathBuf::from(&prims_output_folder);
         let mut resource_packages: HashMap<String, ResourcePackage> = HashMap::new();
+        let prim_count = needed_prim_hashes.len();
+        let mut i = 0;
         for hash in needed_prim_hashes {
+            i += 1;
             let rrid: RuntimeResourceID = RuntimeResourceID::from_hex_string(hash.as_str()).unwrap();
             let resource_info = PackageScan::get_resource_info(partition_manager, &rrid).unwrap();
             let last_partition = resource_info.last_partition;
@@ -20,7 +23,6 @@ impl PrimExtraction {
                 println!("Failed parse resource package: {}", e);
                 std::process::exit(0)
             }));
-            println!("Extracting {} from {}", hash, last_partition);
             let prim_contents = rpkg
                 .read_resource(&package_path, &rrid)
                 .unwrap_or_else(|e| {
@@ -30,7 +32,7 @@ impl PrimExtraction {
 
             let prim_file_path_buf = prims_output_folder_path.join(hash.clone() + ".PRIM");
             let prim_file_path = prim_file_path_buf.as_os_str().to_str().unwrap();
-            println!("Saving the prim to '{}'", prim_file_path);
+            println!("{} / {} Extracting {} from {} and saving to '{}'", i, prim_count, hash, last_partition, prim_file_path);
             fs::write(prim_file_path, prim_contents).expect("File failed to be written");
         }
 

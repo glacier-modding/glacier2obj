@@ -58,12 +58,18 @@ impl ScenarioScan {
         // 00BDA629523CE8B2 [assembly:/_pro/effects/templates/misc/fx_ghostmode.template?/fx_e_ghostmode_outfit_manipulator.entitytemplate].pc_entitytype
         // 00ACD408BE462DD3 fx_shockwave_sphere_1m (template)
         // 00355E794876922A [assembly:/_pro/effects/geometry/misc/fx_basic_shapes.wl2?/fx_torus_1m.prim].pc_entitytype
-        let excluded_hashes: Vec<&str> = Vec::from(["00BDA629523CE8B2", "00ACD408BE462DD3","00355E794876922A"]);
+        // 00B4ED8EA7D2F405 [assembly:/_pro/effects/geometry/gameplay/fx_gameplay_invisibleshotcoli.wl2?/invisibleshotcoli_box20cm.prim].pc_prim
+        // 0069A9533284DCE8 [assembly:/_pro/effects/geometry/misc/fx_basic_shapes.wl2?/fx_torus_1m.prim].pc_prim
+        // 009E5756C710494E [assembly:/_pro/effects/geometry/glow/fx_glow_generic_planes.wl2?/fx_glow_generic_plane_j_00.prim].pc_prim
+        // 00D347CBA29EE6BA [assembly:/_pro/characters/templates/hero/agent47/agent47.template?/agent47_default.entitytemplate].pc_entitytype
+        // 00E74E523354AA2F [assembly:/_pro/environment/geometry/foliage/palm_queen_a.wl2?/palm_queen_15m_c.prim].pc_prim
+        let excluded_hashes: Vec<&str> = Vec::from(["00BDA629523CE8B2", "00ACD408BE462DD3","00355E794876922A","00B4ED8EA7D2F405","0069A9533284DCE8","009E5756C710494E","00D347CBA29EE6BA","00E74E523354AA2F"]);
         loop {
             if hashes.len() == 0 {
                 break;
             }
             hash = hashes.pop_front().unwrap();
+            
             if excluded_hashes.contains(&hash.as_str()) {
                 continue
             }
@@ -79,11 +85,6 @@ impl ScenarioScan {
             if resource_package_opt.is_none() {
                 continue;
             }
-            let ioi_string = if path_list.get(&rrid).is_some() {
-                path_list.get(&rrid).unwrap().resource_path()
-            } else {
-                "".to_string()
-            };
     
             let resource_package = resource_package_opt.unwrap();
             let references = resource_package.last_occurrence.references();
@@ -94,8 +95,8 @@ impl ScenarioScan {
             for reference in references.iter() {
                 let dep_rrid = reference.0;
                 
-                if found_hashes.contains(&dep_rrid) {
-                    continue;
+                if excluded_hashes.contains(&dep_rrid.to_hex_string().as_str()) {
+                    continue
                 }
                 let depend_resource_opt = PackageScan::get_resource_info(partition_manager, &dep_rrid);
                 if depend_resource_opt.is_none() {
@@ -108,7 +109,6 @@ impl ScenarioScan {
                 };
 
                 let depend_resource = depend_resource_opt.unwrap();
-                
                 if depend_resource.last_occurrence.data_type().as_str() == "PRIM" {
                     prim_rrid = Some(dep_rrid);
                     prim_ioi_string = Some(dep_ioi_string.clone());
@@ -117,8 +117,6 @@ impl ScenarioScan {
                 if Vec::from(["TEMP", "ALOC", "PRIM", "ASET"]).contains(&depend_resource.last_occurrence.data_type().as_str()) {
                     let is_aloc = depend_resource.last_occurrence.data_type().as_str() == "ALOC";
                     if is_aloc {
-                        println!("{} {} Type: {} Partition: {}", rrid, ioi_string, resource_package.last_occurrence.data_type(), resource_package.last_partition);
-                        println!("|-> {} {} Type: {} Partition: {}", dep_rrid, dep_ioi_string, depend_resource.last_occurrence.data_type(), depend_resource.last_partition);
                         self.hashes_for_output.insert(rrid);
                         self.alocs_for_output.insert(dep_rrid);
                         has_aloc = true;
@@ -128,8 +126,7 @@ impl ScenarioScan {
             }
             if has_aloc && prim_rrid.is_some() {
                 self.prims_for_output.insert(prim_rrid.unwrap());
-                println!("|-> {} {} Type: prim Partition: {}", prim_rrid.unwrap(), prim_ioi_string.unwrap(), prim_partition.unwrap());
-
+                println!("Found PRIM: {} {} in {}", prim_rrid.unwrap(), prim_ioi_string.unwrap(), prim_partition.unwrap());
             }
         }
     }

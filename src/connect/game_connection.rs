@@ -8,7 +8,7 @@ use url::Url;
 pub struct GameConnection;
 impl GameConnection {
     pub fn get_prim_list_from_game(in_file_path: &str, out_file_path: &str) {
-        println!("Connecting to game on port 46735");
+        println!("Connecting to EditorServer on port 46735...");
 
         let mut socket = GameConnection::connect_to_game();
         
@@ -40,18 +40,21 @@ impl GameConnection {
     }
 
     fn send_message(socket: &mut tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, in_file_contents: String) {
+        println!("Sending prims to game...");
         let _ = socket.write_message(Message::Text(in_file_contents.into()));
     }
 
     fn get_input_file_contents(in_file_path: &str) -> String {
+        println!("Loading toFind.json file...");
         let in_file_contents = fs::read_to_string(in_file_path).expect(format!("Error opening {}. Run a scan to generate this file", in_file_path).as_str());
         in_file_contents
     }
 
     fn send_hello_message(socket: &mut tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>) {
+        println!("Sending hello message...");
         let _ = socket.write_message(Message::Text(r#"{"type":"hello","identifier":"glacier2obj"}"#.into()));
     }
-        
+
     fn build_prims_list(mut socket: tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, mut out_file: fs::File) {
         let mut welcome_received: bool = false;
         let mut is_first: bool = true;
@@ -71,6 +74,7 @@ impl GameConnection {
                         eprintln!("Couldn't write to file: {}", e);
                     }
                 } else {
+                    println!("Received first PRIM transform from EditorServer. Continuing to process PRIM transforms...");
                     is_first = false;
                 }
                 if let Err(e) = write!(out_file, "{}", msg) {
@@ -80,6 +84,7 @@ impl GameConnection {
                 if let Err(e) = write!(out_file, r#"{{"entities":["#) {
                     eprintln!("Couldn't write to file: {}", e);
                 }
+                println!("Connected to EditorServer.");
                 welcome_received = true;
             }
         }
