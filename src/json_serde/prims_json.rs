@@ -1,5 +1,5 @@
 use serde::Deserialize;
-use std::fs;
+use std::{fs, io::{self, Write}};
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -10,6 +10,7 @@ pub struct PrimsJson {
 impl PrimsJson {
     pub fn build_from_prims_file(prims_json_file: String) -> PrimsJson {
         println!("Building PrimsJson from prims file: {}", prims_json_file);
+        io::stdout().flush().unwrap();
         let prims_json_string = fs::read_to_string(prims_json_file.as_str())
         .expect("Should have been able to read the file");
         return PrimsJson::build_from_prims_json_string(prims_json_string)
@@ -28,6 +29,7 @@ impl PrimsJson {
             println!(" Position: {:?}", entity.entity.position);
             println!(" Rotation: {:?}", entity.entity.rotation);
             println!(" Scale:    {:?}", entity.entity.scale);
+            io::stdout().flush().unwrap();
         }
     }
 }

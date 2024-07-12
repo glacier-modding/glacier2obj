@@ -99,6 +99,8 @@ impl PackageScan {
         }
         .unwrap_or_else(|e| {
             println!("Failed to parse package definitions {}", e);
+            io::stdout().flush().unwrap();
+
             std::process::exit(0);
         });
 
@@ -113,6 +115,7 @@ impl PackageScan {
             )
             .unwrap_or_else(|e| {
                 eprintln!("failed to init package manager: {}", e);
+                io::stdout().flush().unwrap();
                 std::process::exit(0);
             });
         return Some(package_manager);

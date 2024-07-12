@@ -3,9 +3,10 @@ use rpkg_rs::misc::resource_id::ResourceID;
 use rpkg_rs::resource::partition_manager::PartitionManager;
 use rpkg_rs::resource::runtime_resource_id::RuntimeResourceID;
 use std::collections::{HashSet, VecDeque};
+use std::io::Write;
 use std::path::Path;
 use std::str::FromStr;
-use std::fs;
+use std::{fs, io};
 
 use crate::package::package_scan::PackageScan;
 
@@ -45,6 +46,8 @@ impl ScenarioScan {
                 hash = RuntimeResourceID::from_resource_id(&ioi_string_resource_id.unwrap()).to_hex_string();
             } else {
                 println!("Invalid RuntimeResourceId");
+                io::stdout().flush().unwrap();
+
                 std::process::exit(0);
             }
         } else {
@@ -53,6 +56,8 @@ impl ScenarioScan {
         let mut hashes: VecDeque<String> = VecDeque::from([String::from_str(&hash).unwrap()]);
         let mut found_hashes = HashSet::new();
         println!("Getting ALOCs for: {}", hash);
+        io::stdout().flush().unwrap();
+
 
         // These hashes are for things that aren't needed for navmeshes like fx ghost mode, fx torus, and shockwave sphere
         // 00BDA629523CE8B2 [assembly:/_pro/effects/templates/misc/fx_ghostmode.template?/fx_e_ghostmode_outfit_manipulator.entitytemplate].pc_entitytype
@@ -75,6 +80,8 @@ impl ScenarioScan {
             }
             let rrid = RuntimeResourceID::from_hex_string(&hash).unwrap_or_else(|_| {
                 println!("Invalid RuntimeResourceId");
+                io::stdout().flush().unwrap();
+
                 std::process::exit(0);
             });
             if found_hashes.contains(&rrid) {
@@ -127,6 +134,8 @@ impl ScenarioScan {
             if has_aloc && prim_rrid.is_some() {
                 self.prims_for_output.insert(prim_rrid.unwrap());
                 println!("Found PRIM: {} {} in {}", prim_rrid.unwrap(), prim_ioi_string.unwrap(), prim_partition.unwrap());
+                io::stdout().flush().unwrap();
+
             }
         }
     }
