@@ -7,7 +7,48 @@ use url::Url;
 
 pub struct GameConnection;
 impl GameConnection {
-    pub fn get_prim_list_from_game(in_file_path: &str, out_file_path: &str) {
+    pub fn get_brick_hashes_from_game() -> Vec<String> {
+        println!("Connecting to EditorServer on port 46735...");
+        io::stdout().flush().unwrap();
+
+        let mut socket = GameConnection::connect_to_game();
+        
+        GameConnection::send_hello_message(&mut socket);
+        GameConnection::send_message(&mut socket, "{\"type\":\"rebuildEntityTree\"}".to_string());
+        GameConnection::send_message(&mut socket, "{\"type\":\"getBrickHashes\"}".to_string());
+        return GameConnection::receive_brick_hashes_from_game(socket);
+    }
+
+    fn receive_brick_hashes_from_game(mut socket: tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>) -> Vec<String> {
+        let mut welcome_received: bool = false;
+        let mut brick_messages: Vec<String> = Vec::new();
+        loop {
+            let msg = socket.read_message().expect("Error reading message");
+            if msg.to_string().as_str() == "Done sending brick hashes." {
+                println!("Received scene hash. Closing connection to EditorServer and returning scene hash.");
+                io::stdout().flush().unwrap();
+                break
+            }
+            if msg.to_string().as_str() == "{\"type\":\"entityTreeRebuilt\"}" {
+                println!("Entity Tree rebuilt. Sending prims to game...");
+                io::stdout().flush().unwrap();
+                continue
+            }
+            if welcome_received {
+                println!("Received scene hash from EditorServer: {}", msg);
+                io::stdout().flush().unwrap();
+                brick_messages.push(msg.to_string());
+            } else {
+                println!("Connected to EditorServer.");
+                println!("Rebuilding entity tree...");
+                io::stdout().flush().unwrap();
+                welcome_received = true;
+            }
+        }
+        return brick_messages;
+    }
+
+    pub fn get_entity_list_from_game(in_file_path: &str, prims_file_path: &str, pf_boxes_file_path: &str) {
         println!("Connecting to EditorServer on port 46735...");
         io::stdout().flush().unwrap();
 
@@ -17,16 +58,25 @@ impl GameConnection {
         let in_file_contents = GameConnection::get_input_file_contents(in_file_path);
 
         GameConnection::send_message(&mut socket, in_file_contents);
+        GameConnection::send_message(&mut socket, "{\"type\":\"listPfBoxEntities\"}".to_string());
         
-        GameConnection::clear_file(out_file_path);
+        GameConnection::clear_file(prims_file_path);
+        GameConnection::clear_file(pf_boxes_file_path);
         
-        let out_file = OpenOptions::new()
+        let prims_file = OpenOptions::new()
             .write(true)
             .append(true)
-            .open(out_file_path)
+            .open(prims_file_path)
             .unwrap();
+        
+        let pf_boxes_file = OpenOptions::new()
+            .write(true)
+            .append(true)
+            .open(pf_boxes_file_path)
+            .unwrap();
+    
 
-            GameConnection::build_prims_list(socket, out_file);
+            GameConnection::build_entity_list(socket, prims_file, pf_boxes_file);
     }
 
     fn connect_to_game() -> tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>> {
@@ -36,14 +86,13 @@ impl GameConnection {
         socket
     }
 
-    fn clear_file(out_file_path: &str) {
-        fs::write(out_file_path, "").expect(format!("Error writing to {}", out_file_path).as_str());
+    fn clear_file(file_path: &str) {
+        fs::write(file_path, "").expect(format!("Error writing to {}", file_path).as_str());
     }
 
-    fn send_message(socket: &mut tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, in_file_contents: String) {
-        println!("Sending prims to game...");
+    fn send_message(socket: &mut tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, message: String) {
         io::stdout().flush().unwrap();
-        let _ = socket.write_message(Message::Text(in_file_contents.into()));
+        let _ = socket.write_message(Message::Text(message.into()));
     }
 
     fn get_input_file_contents(in_file_path: &str) -> String {
@@ -59,38 +108,78 @@ impl GameConnection {
         let _ = socket.write_message(Message::Text(r#"{"type":"hello","identifier":"glacier2obj"}"#.into()));
     }
 
-    fn build_prims_list(mut socket: tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, mut out_file: fs::File) {
+    fn build_entity_list(mut socket: tungstenite::WebSocket<tungstenite::stream::MaybeTlsStream<std::net::TcpStream>>, mut prims_file: fs::File, mut pf_boxes_file: fs::File) {
         let mut welcome_received: bool = false;
         let mut is_first: bool = true;
+        let mut reading_prims: bool = true;
         
         loop {
             let msg = socket.read_message().expect("Error reading message");
             if msg.to_string().as_str() == "Done sending entities." {
-                println!("Received Done message. Finalizing json output and exiting.");
-                io::stdout().flush().unwrap();
-                if let Err(e) = writeln!(out_file, "]}}") {
-                    eprintln!("Couldn't write to file: {}", e);
+                if reading_prims {
+                    reading_prims = false;
+                    println!("Received Done message for prims. Finalizing prims.json output and getting pf boxes.");
                     io::stdout().flush().unwrap();
+                    if let Err(e) = writeln!(prims_file, "]}}") {
+                        eprintln!("Couldn't write to prims file: {}", e);
+                        io::stdout().flush().unwrap();
+                    }
+                    is_first = true;
+                    continue;
+                } else {
+                    println!("Received Done message for pf boxes. Finalizing pfBoxes.json output and exiting.");
+                    io::stdout().flush().unwrap();
+                    if let Err(e) = writeln!(pf_boxes_file, "]}}") {
+                        eprintln!("Couldn't write to pf boxes file: {}", e);
+                        io::stdout().flush().unwrap();
+                    }
+                    break
                 }
-                break
+            }
+            if msg.to_string().as_str() == "{\"type\":\"entityTreeRebuilt\"}" {
+                println!("Entity Tree rebuilt. Sending prims to game...");
+                io::stdout().flush().unwrap();
+                continue
             }
             if welcome_received {
                 if !is_first {
-                    if let Err(e) = writeln!(out_file, ",") {
-                        eprintln!("Couldn't write to file: {}", e);
-                        io::stdout().flush().unwrap();
+                    if reading_prims {
+                        if let Err(e) = writeln!(prims_file, ",") {
+                            eprintln!("Couldn't write to prims file: {}", e);
+                            io::stdout().flush().unwrap();
+                        }
+                    } else {
+                        if let Err(e) = writeln!(pf_boxes_file, ",") {
+                            eprintln!("Couldn't write to pf boxes file: {}", e);
+                            io::stdout().flush().unwrap();
+                        }
                     }
                 } else {
-                    println!("Received first PRIM transform from EditorServer. Continuing to process PRIM transforms...");
-                    io::stdout().flush().unwrap();
                     is_first = false;
+                    if reading_prims {
+                        println!("Received first PRIM transform from EditorServer. Continuing to process PRIM transforms...");
+                        io::stdout().flush().unwrap();
+                    } else {
+                        println!("Received first pf box transform from EditorServer. Continuing to process pf box transforms...");
+                        io::stdout().flush().unwrap();
+                    }
                 }
-                if let Err(e) = write!(out_file, "{}", msg) {
-                    eprintln!("Couldn't write to file: {}", e);
+                if reading_prims { 
+                    if let Err(e) = write!(prims_file, "{}", msg) {
+                        eprintln!("Couldn't write to prims file: {}", e);
+                    }
+                }
+                else { 
+                    if let Err(e) = write!(pf_boxes_file, "{}", msg) {
+                        eprintln!("Couldn't write to pf boxes file: {}", e);
+                    }
                 }
             } else {
-                if let Err(e) = write!(out_file, r#"{{"entities":["#) {
-                    eprintln!("Couldn't write to file: {}", e);
+                if let Err(e) = write!(prims_file, r#"{{"entities":["#) {
+                    eprintln!("Couldn't write to prims file: {}", e);
+                }
+                if let Err(e) = write!(pf_boxes_file, r#"{{"entities":["#) {
+                    eprintln!("Couldn't write to pf boxes file: {}", e);
                 }
                 println!("Connected to EditorServer.");
                 io::stdout().flush().unwrap();

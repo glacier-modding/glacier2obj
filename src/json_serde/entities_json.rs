@@ -3,27 +3,36 @@ use std::{fs, io::{self, Write}};
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct PrimsJson {
+pub struct EntitiesJson {
     pub entities: Vec<EntityHashPair>,
 }
 
-impl PrimsJson {
-    pub fn build_from_prims_file(prims_json_file: String) -> PrimsJson {
+impl EntitiesJson {
+    pub fn get_brick_tblu_hashes(brick_tblu_message_strings: Vec<String>) -> Vec<String> {
+        let mut brick_tblu_hashes: Vec<String> = Vec::new();
+        for brick_tblu_message_string in brick_tblu_message_strings {
+            let brick_message: BrickMessage = serde_json::from_str(&brick_tblu_message_string).expect("Error parsing scene hash.");
+            brick_tblu_hashes.push(brick_message.brick_hash);
+        }
+        return brick_tblu_hashes;
+    }
+
+    pub fn build_from_prims_file(prims_json_file: String) -> EntitiesJson {
         println!("Building PrimsJson from prims file: {}", prims_json_file);
         io::stdout().flush().unwrap();
         let prims_json_string = fs::read_to_string(prims_json_file.as_str())
         .expect("Should have been able to read the file");
-        return PrimsJson::build_from_prims_json_string(prims_json_string)
+        return EntitiesJson::build_from_prims_json_string(prims_json_string)
     }
 
-    pub fn build_from_prims_json_string(prims_json_string: String) -> PrimsJson {
+    pub fn build_from_prims_json_string(prims_json_string: String) -> EntitiesJson {
         return serde_json::from_str(&prims_json_string).expect("JSON was not well-formatted");
     }
 
-    pub fn output_prims(&mut self) {
+    pub fn output_entities(&mut self) {
         for entity in &self.entities {
             println!("Entity Instance:");
-            println!(" Hash:     {}", entity.prim_hash);
+            println!(" Hash:     {}", entity.hash);
             println!(" ID:       {}", entity.entity.id);
             println!(" Name:     {}", entity.entity.name.clone().unwrap_or(String::from("")));
             println!(" Position: {:?}", entity.entity.position);
@@ -36,8 +45,14 @@ impl PrimsJson {
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct BrickMessage {
+    pub brick_hash: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct EntityHashPair {
-    pub prim_hash: String,
+    pub hash: String,
     pub entity: Entity,
 }
 

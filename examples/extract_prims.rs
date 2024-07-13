@@ -1,5 +1,5 @@
 use glacier2obj::extract::prim_extraction::PrimExtraction;
-use glacier2obj::json_serde::prims_json::PrimsJson;
+use glacier2obj::json_serde::entities_json::EntitiesJson;
 use glacier2obj::package::package_scan::PackageScan;
 use std::env;
 
@@ -10,7 +10,7 @@ fn main() {
         eprintln!("Usage: cargo run --example extract_prims -- <path to a Retail directory> <path to a Runtime directory> <game version (H2016 | HM2 | HM3)> <path to a prims.json file> <path to output directory>");
         return;
     }
-    let prims_json = PrimsJson::build_from_prims_file(args[4].clone());
+    let prims_json = EntitiesJson::build_from_prims_file(args[4].clone());
     let needed_prim_hashes = PrimExtraction::get_needed_prim_hashes(&prims_json, args[5].clone());
     if needed_prim_hashes.is_empty() {
         println!("All prim files already exist. Skipping extraction.");

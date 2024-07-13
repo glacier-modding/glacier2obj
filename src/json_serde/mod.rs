@@ -1,1 +1,1 @@
-pub mod prims_json;
+pub mod entities_json;

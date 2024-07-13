@@ -1,6 +1,6 @@
 use std::env;
 
-use glacier2obj::{package::package_scan::PackageScan, scenario::scenario_scan::ScenarioScan};
+use glacier2obj::{package::package_scan::PackageScan, scene::scene_scan::SceneScan};
 
 // Based on mount_game_files example from rpkg-rs
 pub fn main() {
@@ -9,7 +9,7 @@ pub fn main() {
         eprintln!("Usage: cargo run -- example scan_scenario <path to a Retail directory> <game version (H2016 | HM2 | HM3)> <ioi string or hash> <path to a hashlist> <path to output file>");
         return;
     }
-    let mut scan: ScenarioScan = ScenarioScan::new(args[3].clone(), args[4].clone());
+    let mut scan: SceneScan = SceneScan::new(vec![args[3].clone()], args[4].clone());
     let partition_manager = PackageScan::scan_packages(args[1].clone(), args[2].clone()).unwrap();
 
     scan.scan_scenario(&partition_manager);

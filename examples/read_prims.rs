@@ -1,4 +1,4 @@
-use glacier2obj::json_serde::prims_json::PrimsJson;
+use glacier2obj::json_serde::entities_json::EntitiesJson;
 use std::env;
 
 fn main() {
@@ -8,6 +8,6 @@ fn main() {
         eprintln!("Usage: cargo run --example read_prims -- <path to a prims.json file>");
         return;
     }
-    let mut prims_json: PrimsJson = PrimsJson::build_from_prims_file(args[1].clone());
-    prims_json.output_prims();
+    let mut prims_json: EntitiesJson = EntitiesJson::build_from_prims_file(args[1].clone());
+    prims_json.output_entities();
 }
