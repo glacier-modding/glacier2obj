@@ -97,7 +97,8 @@ impl SceneScan {
             // 009E5756C710494E [assembly:/_pro/effects/geometry/glow/fx_glow_generic_planes.wl2?/fx_glow_generic_plane_j_00.prim].pc_prim
             // 00D347CBA29EE6BA [assembly:/_pro/characters/templates/hero/agent47/agent47.template?/agent47_default.entitytemplate].pc_entitytype
             // 00E74E523354AA2F [assembly:/_pro/environment/geometry/foliage/palm_queen_a.wl2?/palm_queen_15m_c.prim].pc_prim
-            let excluded_hashes: Vec<&str> = Vec::from(["00BDA629523CE8B2", "00ACD408BE462DD3","00355E794876922A","00B4ED8EA7D2F405","0069A9533284DCE8","009E5756C710494E","00D347CBA29EE6BA","00E74E523354AA2F"]);
+            // 0081EC97AC8CA5BB [assembly:/templates/aspectdummy.aspect]([modules:/zgeomentity.class].entitytype,[modules:/zdynamicphysicsaspect.class].entitytype,[modules:/zcollisionresourceshapeaspect.class].entitytype).pc_entitytype
+            let excluded_hashes: Vec<&str> = Vec::from(["00BDA629523CE8B2", "00ACD408BE462DD3","00355E794876922A","00B4ED8EA7D2F405","0069A9533284DCE8","009E5756C710494E","00D347CBA29EE6BA","00E74E523354AA2F", "0081EC97AC8CA5BB"]);
             loop {
                 if hashes.len() == 0 {
                     break;
@@ -128,10 +129,12 @@ impl SceneScan {
                 let mut prim_ioi_string: Option<String> = None;
                 let mut prim_partition: Option<String> = None;
                 let mut has_aloc = false;
+                let mut should_include = true;
                 for reference in references.iter() {
                     let dep_rrid = reference.0;
                     
                     if excluded_hashes.contains(&dep_rrid.to_hex_string().as_str()) {
+                        should_include = false;
                         continue
                     }
                     let depend_resource_opt = PackageScan::get_resource_info(partition_manager, &dep_rrid);
@@ -160,7 +163,7 @@ impl SceneScan {
                         hashes.push_back(dep_rrid.to_hex_string());
                     }
                 }
-                if has_aloc && prim_rrid.is_some() {
+                if should_include && has_aloc && prim_rrid.is_some() {
                     self.prims_for_output.insert(prim_rrid.unwrap());
                     println!("Found PRIM: {} {} in {}", prim_rrid.unwrap(), prim_ioi_string.unwrap(), prim_partition.unwrap());
                     io::stdout().flush().unwrap();
