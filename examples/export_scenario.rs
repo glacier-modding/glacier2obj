@@ -14,8 +14,8 @@ pub fn main() {
     let mut scan: SceneScan = SceneScan::new(brick_tblu_hashes, args[3].clone());
     let partition_manager = PackageScan::scan_packages(args[1].clone(), args[2].clone()).unwrap();
 
-    scan.scan_scenario(&partition_manager);
-    scan.output_to_file(args[4].clone());
+    //scan.scan_scenario(&partition_manager);
+    //scan.output_to_file(args[4].clone());
 
     GameConnection::get_entity_list_from_game(args[4].as_str(), args[5].as_str(), args[6].as_str());
     let prims_json = EntitiesJson::build_from_prims_file(args[5].clone());

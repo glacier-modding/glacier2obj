@@ -48,17 +48,16 @@ impl GameConnection {
         return brick_messages;
     }
 
-    pub fn get_entity_list_from_game(in_file_path: &str, prims_file_path: &str, pf_boxes_file_path: &str) {
+    pub fn get_entity_list_from_game(prims_file_path: &str, pf_boxes_file_path: &str) {
         println!("Connecting to EditorServer on port 46735...");
         io::stdout().flush().unwrap();
 
         let mut socket = GameConnection::connect_to_game();
         
         GameConnection::send_hello_message(&mut socket);
-        let in_file_contents = GameConnection::get_input_file_contents(in_file_path);
 
-        GameConnection::send_message(&mut socket, in_file_contents);
-        GameConnection::send_message(&mut socket, "{\"type\":\"listPfBoxEntities\"}".to_string());
+        GameConnection::send_message(&mut socket, r#"{"type":"listPrimEntities", "prims":[]}"#.to_string());
+        GameConnection::send_message(&mut socket, r#"{"type":"listPfBoxEntities"}"#.to_string());
         
         GameConnection::clear_file(prims_file_path);
         GameConnection::clear_file(pf_boxes_file_path);
