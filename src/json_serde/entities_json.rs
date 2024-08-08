@@ -1,32 +1,34 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use std::{fs, io::{self, Write}};
 
-#[derive(Debug, Deserialize)]
+use crate::json_serde::entities_json;
+
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EntitiesJson {
     pub entities: Vec<EntityHashPair>,
 }
 
 impl EntitiesJson {
-    pub fn get_brick_tblu_hashes(brick_tblu_message_strings: Vec<String>) -> Vec<String> {
-        let mut brick_tblu_hashes: Vec<String> = Vec::new();
-        for brick_tblu_message_string in brick_tblu_message_strings {
-            let brick_message: BrickMessage = serde_json::from_str(&brick_tblu_message_string).expect("Error parsing scene hash.");
-            brick_tblu_hashes.push(brick_message.brick_hash);
-        }
-        return brick_tblu_hashes;
-    }
-
-    pub fn build_from_prims_file(prims_json_file: String) -> EntitiesJson {
-        println!("Building PrimsJson from prims file: {}", prims_json_file);
+    pub fn build_from_alocs_file(alocs_json_file: String) -> EntitiesJson {
+        println!("Building AlocsJson from alocs file: {}", alocs_json_file);
         io::stdout().flush().unwrap();
-        let prims_json_string = fs::read_to_string(prims_json_file.as_str())
+        let alocs_json_string = fs::read_to_string(alocs_json_file.as_str())
         .expect("Should have been able to read the file");
-        return EntitiesJson::build_from_prims_json_string(prims_json_string)
+        return EntitiesJson::build_from_alocs_json_string(alocs_json_string)
     }
 
-    pub fn build_from_prims_json_string(prims_json_string: String) -> EntitiesJson {
-        return serde_json::from_str(&prims_json_string).expect("JSON was not well-formatted");
+    pub fn write_to_alocs_file(&mut self, alocs_json_file: String) {
+        println!("Writing AlocsJson to alocs file: {}", alocs_json_file);
+        io::stdout().flush().unwrap();
+        let alocs_json_string = serde_json::to_string(&self.entities).unwrap();
+        fs::write(alocs_json_file, alocs_json_string.as_str())
+        .expect("Should have been able to write to the file");
+        
+    }
+
+    pub fn build_from_alocs_json_string(alocs_json_string: String) -> EntitiesJson {
+        return serde_json::from_str(&alocs_json_string).expect("JSON was not well-formatted");
     }
 
     pub fn output_entities(&mut self) {
@@ -43,20 +45,20 @@ impl EntitiesJson {
     }
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BrickMessage {
     pub brick_hash: String,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EntityHashPair {
     pub hash: String,
     pub entity: Entity,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Entity {
     pub id: String,
@@ -66,7 +68,7 @@ pub struct Entity {
     pub scale: Scale,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde()]
 pub struct Vec3 {
     pub x: f64,
@@ -74,7 +76,7 @@ pub struct Vec3 {
     pub z: f64,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Rotation {
     pub yaw: f64,
@@ -82,7 +84,7 @@ pub struct Rotation {
     pub roll: f64,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Scale {
     #[serde(rename = "type")]

@@ -8,6 +8,6 @@ fn main() {
         eprintln!("Usage: cargo run --example read_prims -- <path to a prims.json file>");
         return;
     }
-    let mut prims_json: EntitiesJson = EntitiesJson::build_from_prims_file(args[1].clone());
+    let mut prims_json: EntitiesJson = EntitiesJson::build_from_alocs_file(args[1].clone());
     prims_json.output_entities();
 }

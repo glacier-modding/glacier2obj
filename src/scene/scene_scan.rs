@@ -1,5 +1,4 @@
 use rpkg_rs::misc::hash_path_list::PathList;
-use rpkg_rs::misc::resource_id::ResourceID;
 use rpkg_rs::resource::partition_manager::PartitionManager;
 use rpkg_rs::resource::runtime_resource_id::RuntimeResourceID;
 use std::collections::{HashMap, HashSet, VecDeque};
@@ -79,8 +78,8 @@ impl SceneScan {
 
         let mut path_list = PathList::new();
         path_list.parse_into(hash_list_path).unwrap();
-        let brick_temp_hashes = SceneScan::get_brick_temp_hashes(self.bricks.clone(), partition_manager);
-        for brick_temp_hash in brick_temp_hashes {
+        let temp_hashes = SceneScan::get_brick_temp_hashes(self.bricks.clone(), partition_manager);
+        for brick_temp_hash in temp_hashes {
             let mut hash = brick_temp_hash;
             let mut hashes: VecDeque<String> = VecDeque::from([String::from_str(&hash).unwrap()]);
             let mut found_hashes = HashSet::new();
