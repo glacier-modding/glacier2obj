@@ -30,7 +30,7 @@ impl AlocExtraction {
                     for hash in chunk {
                         i += 1;
                         let runtime_folder_path = PathBuf::from(runtime_folder_ref);
-                        let rrid: RuntimeResourceID = RuntimeResourceID::from_hex_string(hash.as_str()).unwrap();
+                        let rrid: RuntimeResourceID = RuntimeResourceID::from_hex_string(hash.as_str()).expect(format!("Error getting RRID from hash: {}", hash.as_str()).as_str());
                         let resource_info = PackageScan::get_resource_info(partition_manager, &rrid).unwrap();
                         let last_partition = resource_info.last_partition;
                         let package_path = runtime_folder_path.join(last_partition.clone());

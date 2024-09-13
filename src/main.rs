@@ -4,8 +4,8 @@ use glacier2obj::{connect::game_connection::GameConnection, extract::aloc_extrac
 
 pub fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() < 7 {
-        eprintln!("Usage: cargo run <path to a Retail directory> <game version (H2016 | HM2 | HM3)> <path to alocs.json file> <path to pfBoxes.json file> <path to a Runtime directory> <path to output prim directory>");
+    if args.len() < 6 {
+        eprintln!("Usage: cargo run <path to a Retail directory> <game version (H2016 | HM2 | HM3)> <path to alocs.json file> <path to pfBoxes.json file> <path to a Runtime directory> <path to output aloc directory>");
         return;
     }
 
