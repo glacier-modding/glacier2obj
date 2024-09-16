@@ -79,9 +79,10 @@ pub struct Vec3 {
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Rotation {
-    pub yaw: f64,
-    pub pitch: f64,
-    pub roll: f64,
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
+    pub w: f64,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
