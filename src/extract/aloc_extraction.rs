@@ -63,10 +63,10 @@ impl AlocExtraction {
 
     }
 
-    pub fn get_all_aloc_hashes(alocs_json: &EntitiesJson, alocs_output_folder: String) -> HashSet<String> {
+    pub fn get_all_aloc_hashes(nav_json: &EntitiesJson, alocs_output_folder: String) -> HashSet<String> {
         let mut aloc_hashes: HashSet<String> = HashSet::new();
         let mut needed_hashes: HashSet<String> = HashSet::new();
-        for entity in &alocs_json.entities {
+        for entity in &nav_json.alocs {
             aloc_hashes.insert(entity.hash.clone());
         }
         let alocs_output_folder_path = PathBuf::from(&alocs_output_folder);

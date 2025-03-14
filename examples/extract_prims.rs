@@ -11,7 +11,7 @@ fn main() {
         return;
     }
     let partition_manager = PackageScan::scan_packages(args[1].clone(), args[3].clone()).unwrap();
-    let prims_json = EntitiesJson::build_from_alocs_file(args[4].clone());
+    let prims_json = EntitiesJson::build_from_nav_json_file(args[4].clone());
     let needed_aloc_hashes = AlocExtraction::get_all_aloc_hashes(&prims_json, args[5].clone());
     if needed_aloc_hashes.is_empty() {
         println!("All prim files already exist. Skipping extraction.");

@@ -10,8 +10,8 @@ pub fn main() {
     }
     let partition_manager = PackageScan::scan_packages(args[1].clone(), args[2].clone()).unwrap();
 
-    GameConnection::get_entity_list_from_game(args[3].as_str(), args[4].as_str());
-    let prims_json = EntitiesJson::build_from_alocs_file(args[3].clone());
+    GameConnection::get_entity_list_from_game(args[3].as_str());
+    let prims_json = EntitiesJson::build_from_nav_json_file(args[3].clone());
     let needed_prim_hashes = AlocExtraction::get_all_aloc_hashes(&prims_json, args[6].clone());
     if needed_prim_hashes.is_empty() {
         println!("All prim files already exist. Skipping extraction.");

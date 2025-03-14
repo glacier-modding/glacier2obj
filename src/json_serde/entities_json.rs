@@ -6,33 +6,34 @@ use crate::json_serde::entities_json;
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EntitiesJson {
-    pub entities: Vec<EntityHashPair>,
+    pub alocs: Vec<AlocHashPair>,
+    #[serde(rename = "pfBoxes")]
+    pub pf_boxes: Vec<PfBoxHashPair>,
 }
 
 impl EntitiesJson {
-    pub fn build_from_alocs_file(alocs_json_file: String) -> EntitiesJson {
-        println!("Building AlocsJson from alocs file: {}", alocs_json_file);
+    pub fn build_from_nav_json_file(nav_json_file: String) -> EntitiesJson {
+        println!("Building EntitiesJson from nav.json file: {}", nav_json_file);
         io::stdout().flush().unwrap();
-        let alocs_json_string = fs::read_to_string(alocs_json_file.as_str())
-        .expect("Should have been able to read the file");
-        return EntitiesJson::build_from_alocs_json_string(alocs_json_string)
+        let nav_json_string = fs::read_to_string(nav_json_file.as_str())
+            .expect("Should have been able to read the file");
+        return EntitiesJson::build_from_nav_json_string(nav_json_string);
     }
 
-    pub fn write_to_alocs_file(&mut self, alocs_json_file: String) {
-        println!("Writing AlocsJson to alocs file: {}", alocs_json_file);
+    pub fn write_alocs_to_nav_json_file(&mut self, nav_json_file: String) {
+        println!("Writing EntitiesJson to nav.json file: {}", nav_json_file);
         io::stdout().flush().unwrap();
-        let alocs_json_string = serde_json::to_string(&self.entities).unwrap();
-        fs::write(alocs_json_file, alocs_json_string.as_str())
-        .expect("Should have been able to write to the file");
-        
+        let nav_json_string = serde_json::to_string(&self.alocs).unwrap();
+        fs::write(nav_json_file, nav_json_string.as_str())
+            .expect("Should have been able to write to the file");
     }
 
-    pub fn build_from_alocs_json_string(alocs_json_string: String) -> EntitiesJson {
+    pub fn build_from_nav_json_string(alocs_json_string: String) -> EntitiesJson {
         return serde_json::from_str(&alocs_json_string).expect("JSON was not well-formatted");
     }
 
     pub fn output_entities(&mut self) {
-        for entity in &self.entities {
+        for entity in &self.alocs {
             println!("Entity Instance:");
             println!(" Hash:     {}", entity.hash);
             println!(" ID:       {}", entity.entity.id);
@@ -53,19 +54,38 @@ pub struct BrickMessage {
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct EntityHashPair {
+pub struct AlocHashPair {
     pub hash: String,
-    pub entity: Entity,
+    pub entity: Aloc,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Entity {
+pub struct PfBoxHashPair {
+    pub hash: String,
+    pub entity: PfBox,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Aloc {
     pub id: String,
     pub name: Option<String>,
+    pub tblu: Option<String>,
     pub position: Vec3,
     pub rotation: Rotation,
     pub scale: Scale,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PfBox {
+    pub id: String,
+    pub position: Vec3,
+    pub rotation: Rotation,
+    #[serde(rename = "type")]
+    pub r#type: Type,
+    pub size: Scale,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -91,4 +111,12 @@ pub struct Scale {
     #[serde(rename = "type")]
     pub r#type: String,
     pub data: Vec3,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Type {
+    #[serde(rename = "type")]
+    pub r#type: String,
+    pub data: String,
 }
