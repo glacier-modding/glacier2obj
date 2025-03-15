@@ -1,8 +1,6 @@
 use std::thread::{self, ScopedJoinHandle};
 use std::{collections::{HashMap, HashSet}, fs, io::{self, Write}, path::{Path, PathBuf}};
 
-use itertools::Itertools;
-use rpkg_rs::misc::hash_path_list::PathList;
 use rpkg_rs::resource::{partition_manager::PartitionManager, resource_package::ResourcePackage, runtime_resource_id::RuntimeResourceID};
 
 use crate::{json_serde::entities_json::EntitiesJson, package::package_scan::PackageScan};

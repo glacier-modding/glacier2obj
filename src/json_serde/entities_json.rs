@@ -1,8 +1,6 @@
 use serde::{Serialize, Deserialize};
 use std::{fs, io::{self, Write}};
 
-use crate::json_serde::entities_json;
-
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EntitiesJson {
