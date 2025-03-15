@@ -1,8 +1,11 @@
 use std::{fs, io};
+use std::borrow::Cow;
 use std::fs::OpenOptions;
 use std::io::prelude::*;
 
 use tungstenite::{connect, Message};
+use tungstenite::protocol::CloseFrame;
+use tungstenite::protocol::frame::coding::CloseCode;
 use url::Url;
 
 pub struct GameConnection;
@@ -64,7 +67,7 @@ impl GameConnection {
                     println!("Received Done message for alocs. Getting pf boxes.");
                     io::stdout().flush().unwrap();
                     if let Err(e) = writeln!(nav_json_file, r#"],"pfBoxes":["#) {
-                        eprintln!("Couldn't write to alocs file: {}", e);
+                        eprintln!("Error: Couldn't write to nav json file: {}", e);
                         io::stdout().flush().unwrap();
                     }
                     is_first = true;
@@ -73,9 +76,11 @@ impl GameConnection {
                     println!("Received Done message for pf boxes. Finalizing output.navkit.json output and exiting.");
                     io::stdout().flush().unwrap();
                     if let Err(e) = writeln!(nav_json_file, "]}}") {
-                        eprintln!("Couldn't write to pf boxes file: {}", e);
+                        eprintln!("Error: Couldn't write to nav json file: {}", e);
                         io::stdout().flush().unwrap();
                     }
+                    let close_frame: CloseFrame = CloseFrame { code: CloseCode::Normal, reason: Cow::from("Completed scene extraction") };
+                    socket.close(Some(close_frame)).expect("Error closing connection to game.");
                     break;
                 }
             }
