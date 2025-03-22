@@ -20,6 +20,7 @@ impl GameConnection {
         GameConnection::send_message(&mut socket, "{\"type\":\"rebuildEntityTree\"}".to_string());
         GameConnection::send_message(&mut socket, r#"{"type":"listAlocEntities"}"#.to_string());
         GameConnection::send_message(&mut socket, r#"{"type":"listPfBoxEntities"}"#.to_string());
+        GameConnection::send_message(&mut socket, r#"{"type":"listPfSeedPointEntities"}"#.to_string());
 
         GameConnection::clear_file(navkit_json_file_path);
 
@@ -58,12 +59,14 @@ impl GameConnection {
         let mut welcome_received: bool = false;
         let mut is_first: bool = true;
         let mut reading_alocs: bool = true;
+        let mut reading_pf_boxes: bool = true;
 
         loop {
             let msg = socket.read_message().expect("Error reading message");
             if msg.to_string().as_str() == "Done sending entities." {
                 if reading_alocs {
                     reading_alocs = false;
+                    reading_pf_boxes = true;
                     println!("Received Done message for alocs. Getting pf boxes.");
                     io::stdout().flush().unwrap();
                     if let Err(e) = writeln!(nav_json_file, r#"],"pfBoxes":["#) {
@@ -72,8 +75,18 @@ impl GameConnection {
                     }
                     is_first = true;
                     continue;
+                } else if reading_pf_boxes {
+                    reading_pf_boxes = false;
+                    println!("Received Done message for pf boxes. Getting pf seed points.");
+                    io::stdout().flush().unwrap();
+                    if let Err(e) = writeln!(nav_json_file, r#"],"pfSeedPoints":["#) {
+                        eprintln!("Error: Couldn't write to nav json file: {}", e);
+                        io::stdout().flush().unwrap();
+                    }
+                    is_first = true;
+                    continue;
                 } else {
-                    println!("Received Done message for pf boxes. Finalizing output.navkit.json output and exiting.");
+                    println!("Received Done message for pf seed points. Finalizing output.nav.json output and exiting.");
                     io::stdout().flush().unwrap();
                     if let Err(e) = writeln!(nav_json_file, "]}}") {
                         eprintln!("Error: Couldn't write to nav json file: {}", e);
@@ -107,19 +120,16 @@ impl GameConnection {
                     if reading_alocs {
                         println!("Received first ALOC transform from EditorServer. Continuing to process ALOC transforms...");
                         io::stdout().flush().unwrap();
-                    } else {
+                    } else if reading_pf_boxes {
                         println!("Received first pf box transform from EditorServer. Continuing to process pf box transforms...");
+                        io::stdout().flush().unwrap();
+                    } else {
+                        println!("Received first pf seed point transform from EditorServer. Continuing to process pf seed point transforms...");
                         io::stdout().flush().unwrap();
                     }
                 }
-                if reading_alocs {
-                    if let Err(e) = write!(nav_json_file, "{}", msg) {
-                        eprintln!("Couldn't write to nav json file: {}", e);
-                    }
-                } else {
-                    if let Err(e) = write!(nav_json_file, "{}", msg) {
-                        eprintln!("Couldn't write to nav json file: {}", e);
-                    }
+                if let Err(e) = write!(nav_json_file, "{}", msg) {
+                    eprintln!("Couldn't write to nav json file: {}", e);
                 }
             } else {
                 if let Err(e) = write!(nav_json_file, r#"{{"alocs":["#) {

@@ -7,6 +7,8 @@ pub struct EntitiesJson {
     pub alocs: Vec<AlocHashPair>,
     #[serde(rename = "pfBoxes")]
     pub pf_boxes: Vec<PfBoxHashPair>,
+    #[serde(rename = "pfSeedPoints")]
+    pub pf_seed_points: Vec<PfSeedPointHashPair>,
 }
 
 impl EntitiesJson {
@@ -66,6 +68,13 @@ pub struct PfBoxHashPair {
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct PfSeedPointHashPair {
+    pub hash: String,
+    pub entity: PfSeedPoint,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Aloc {
     pub id: String,
     pub name: Option<String>,
@@ -84,6 +93,14 @@ pub struct PfBox {
     #[serde(rename = "type")]
     pub r#type: Type,
     pub size: Scale,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PfSeedPoint {
+    pub id: String,
+    pub position: Vec3,
+    pub rotation: Rotation,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
