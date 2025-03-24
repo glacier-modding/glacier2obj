@@ -92,7 +92,7 @@ pub struct PfBox {
     pub rotation: Rotation,
     #[serde(rename = "type")]
     pub r#type: Type,
-    pub size: Scale,
+    pub scale: Scale,
 }
 
 #[derive(Debug, Serialize, Deserialize)]

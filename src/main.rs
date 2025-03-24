@@ -11,9 +11,7 @@ pub fn main() {
     }
 
     io::stdout().flush().unwrap();
-    let partition_manager = PackageScan::scan_packages(args[1].clone(), args[2].clone()).unwrap();
-
-    GameConnection::get_entity_list_from_game(args[3].as_str());
+    // GameConnection::get_entity_list_from_game(args[3].as_str());
     let nav_json = EntitiesJson::build_from_nav_json_file(args[3].clone());
     let needed_aloc_hashes = AlocExtraction::get_all_aloc_hashes(&nav_json, args[5].clone());
 
@@ -23,7 +21,7 @@ pub fn main() {
     } else {
         println!("Extracting {} alocs.", needed_aloc_hashes.len());
         io::stdout().flush().unwrap();
-
+        let partition_manager = PackageScan::scan_packages(args[1].clone(), args[2].clone()).unwrap();
         AlocExtraction::extract_alocs(args[4].clone(), needed_aloc_hashes, &partition_manager, args[5].clone());
     }
     println!("Done building extracting alocs, pf boxes, and pf seed points from scenario and building output.nav.json.");

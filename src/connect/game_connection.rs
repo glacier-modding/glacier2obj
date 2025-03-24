@@ -17,7 +17,7 @@ impl GameConnection {
         let mut socket = GameConnection::connect_to_game();
 
         GameConnection::send_hello_message(&mut socket);
-        GameConnection::send_message(&mut socket, "{\"type\":\"rebuildEntityTree\"}".to_string());
+        GameConnection::send_message(&mut socket, r#"{"type":"rebuildEntityTree"}"#.to_string());
         GameConnection::send_message(&mut socket, r#"{"type":"listAlocEntities"}"#.to_string());
         GameConnection::send_message(&mut socket, r#"{"type":"listPfBoxEntities"}"#.to_string());
         GameConnection::send_message(&mut socket, r#"{"type":"listPfSeedPointEntities"}"#.to_string());
