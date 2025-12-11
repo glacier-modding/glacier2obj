@@ -1,10 +1,10 @@
 [package]
 name = "glacier2obj"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 license = "Apache-2.0"
 categories = ["game-development", "data-structures", "parser-implementations"]
-description = "Get ALOCs from a Glacier scene."
+description = "Read a NavKit scene file and extract the needed ALOCs or PRIMs."
 repository = "https://github.com/dbierek/glacier2obj"
 readme = "README.md"
 

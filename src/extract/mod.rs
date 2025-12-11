@@ -1,1 +1,1 @@
-pub mod aloc_extraction;
+pub mod aloc_or_prim_extraction;

@@ -1,4 +1,4 @@
-use glacier2obj::extract::aloc_extraction::AlocExtraction;
+use glacier2obj::extract::aloc_or_prim_extraction::AlocExtraction;
 use glacier2obj::json_serde::entities_json::EntitiesJson;
 use glacier2obj::package::package_scan::PackageScan;
 use std::env;

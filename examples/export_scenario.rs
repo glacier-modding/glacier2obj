@@ -1,6 +1,6 @@
 use std::env;
 
-use glacier2obj::{connect::game_connection::GameConnection, extract::aloc_extraction::AlocExtraction, json_serde::entities_json::EntitiesJson, package::package_scan::PackageScan};
+use glacier2obj::{connect::game_connection::GameConnection, extract::aloc_or_prim_extraction::AlocExtraction, json_serde::entities_json::EntitiesJson, package::package_scan::PackageScan};
 
 pub fn main() {
     let args: Vec<String> = env::args().collect();

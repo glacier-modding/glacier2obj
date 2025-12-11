@@ -4,11 +4,11 @@ use std::{fs, io::{self, Write}};
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EntitiesJson {
-    pub alocs: Vec<AlocHashPair>,
+    pub meshes: Vec<MeshHashesAndEntity>,
     #[serde(rename = "pfBoxes")]
-    pub pf_boxes: Vec<PfBoxHashPair>,
+    pub pf_boxes: Vec<PfBox>,
     #[serde(rename = "pfSeedPoints")]
-    pub pf_seed_points: Vec<PfSeedPointHashPair>,
+    pub pf_seed_points: Vec<PfSeedPoint>,
 }
 
 impl EntitiesJson {
@@ -20,22 +20,15 @@ impl EntitiesJson {
         return EntitiesJson::build_from_nav_json_string(nav_json_string);
     }
 
-    pub fn write_alocs_to_nav_json_file(&mut self, nav_json_file: String) {
-        println!("Writing EntitiesJson to nav.json file: {}", nav_json_file);
-        io::stdout().flush().unwrap();
-        let nav_json_string = serde_json::to_string(&self.alocs).unwrap();
-        fs::write(nav_json_file, nav_json_string.as_str())
-            .expect("Should have been able to write to the file");
-    }
-
-    pub fn build_from_nav_json_string(alocs_json_string: String) -> EntitiesJson {
-        return serde_json::from_str(&alocs_json_string).expect("JSON was not well-formatted");
+    pub fn build_from_nav_json_string(nav_json_string: String) -> EntitiesJson {
+        return serde_json::from_str(&nav_json_string).expect("JSON was not well-formatted");
     }
 
     pub fn output_entities(&mut self) {
-        for entity in &self.alocs {
+        for entity in &self.meshes {
             println!("Entity Instance:");
-            println!(" Hash:     {}", entity.hash);
+            println!(" Aloc Hash:     {}", entity.aloc_hash);
+            println!(" Prim Hash:     {}", entity.prim_hash);
             println!(" ID:       {}", entity.entity.id);
             println!(" Name:     {}", entity.entity.name.clone().unwrap_or(String::from("")));
             println!(" Position: {:?}", entity.entity.position);
@@ -54,23 +47,10 @@ pub struct BrickMessage {
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AlocHashPair {
-    pub hash: String,
+pub struct MeshHashesAndEntity {
+    pub aloc_hash: String,
+    pub prim_hash: String,
     pub entity: Aloc,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct PfBoxHashPair {
-    pub hash: String,
-    pub entity: PfBox,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct PfSeedPointHashPair {
-    pub hash: String,
-    pub entity: PfSeedPoint,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
