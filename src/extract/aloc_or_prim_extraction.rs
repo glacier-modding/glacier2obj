@@ -16,7 +16,7 @@ impl AlocOrPrimExtraction {
         let runtime_folder_ref = &runtime_folder;
         let aloc_or_prim_type_ref = &aloc_or_prim_type;
         println!("Creating directory '{}' if it doesn't exist.", alocs_or_prims_output_folder);
-        fs::create_dir_all(alocs_or_prims_output_folder_ref).expect("Failed to create aloc or primfolder");
+        fs::create_dir_all(alocs_or_prims_output_folder_ref).expect("Failed to create aloc or prim folder");
         println!("Found {} needed alocs or prims. Using {} threads of ~{} alocs or prims per thread.", aloc_or_prim_count, target_num_threads, aloc_or_prim_count / target_num_threads);
         thread::scope(|scope| {
             let mut handles: Vec<ScopedJoinHandle<()>> = Vec::new();

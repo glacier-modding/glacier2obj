@@ -13,10 +13,10 @@ pub struct EntitiesJson {
 
 impl EntitiesJson {
     pub fn build_from_nav_json_file(nav_json_file: String) -> EntitiesJson {
-        println!("Building EntitiesJson from nav.json file: {}", nav_json_file);
+        println!("Loading scene from nav.json file: {}", nav_json_file);
         io::stdout().flush().unwrap();
         let nav_json_string = fs::read_to_string(nav_json_file.as_str())
-            .expect("Should have been able to read the file");
+            .expect("Error reading nav.json file");
         return EntitiesJson::build_from_nav_json_string(nav_json_string);
     }
 
